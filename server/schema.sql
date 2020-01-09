@@ -1,12 +1,23 @@
-CREATE DATABASE chat;
-
 USE chat;
 
-CREATE TABLE messages (
-  /* Describe your table here.*/
+drop table rooms;
+ -- drop table messages;
+ drop table users;
+
+
+CREATE TABLE rooms (
+  id integer, `name` varchar(255)
 );
 
-/* Create other tables and define schemas for them here! */
+CREATE TABLE users (
+  id integer, `name` varchar(255)
+);
+
+CREATE TABLE messages (
+  id integer , content text, createdAt timestamp default current_timestamp
+);
+
+
 
 
 
