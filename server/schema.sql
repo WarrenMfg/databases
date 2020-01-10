@@ -1,27 +1,17 @@
 USE chat;
 
-drop table rooms;
- -- drop table messages;
- drop table users;
-
 
 CREATE TABLE rooms (
-  id integer, `name` varchar(255)
+  id integer NOT NULL AUTO_INCREMENT, `name` varchar(255), PRIMARY KEY(id)
 );
 
 CREATE TABLE users (
-  id integer, `name` varchar(255)
+  id integer NOT NULL AUTO_INCREMENT, `name` varchar(255), PRIMARY KEY(id)
 );
 
 CREATE TABLE messages (
-  id integer , content text, createdAt timestamp default current_timestamp
-);
-
-
-
-
-
-
+  id integer NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), content text, createdAt timestamp default current_timestamp, user integer, room integer
+)
 /*  Execute this file from the command line by typing:
  *    mysql -u root < server/schema.sql
  *  to create the database and the tables.*/
