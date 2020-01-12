@@ -1,0 +1,16 @@
+{
+  "name": "chatterbox",
+  "version": "1.0.0",
+  "description": "Connect chatterbox to server and database",
+  "main": "exampleData.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dompurify": "^2.0.7",
+    "jquery": "^3.4.1",
+    "underscore": "^1.9.2"
+  }
+}

@@ -1,6 +1,6 @@
 // All this is doing is inserting the parse API keys into every $.ajax
 // request that you make so you don't have to.
-
+/*
 // Put your parse application keys here!
 $.ajaxPrefilter(function (settings, _, jqXHR) {
   jqXHR.setRequestHeader('X-Parse-Application-Id', '2ef3d2c5e858caa0f408245343948b1473cac982'); // 2ef3d2c5e858caa0f408245343948b1473cac982
@@ -9,3 +9,4 @@ $.ajaxPrefilter(function (settings, _, jqXHR) {
 
 // Put your campus prefix here
 window.CAMPUS = 'hrr';
+*/

@@ -7,7 +7,7 @@ var Messages = {
     Messages._storage = {};
     Messages._storage.roomNames = {};
 
-    Messages._storage.messages = data.results.map(function(message) {
+    Messages._storage.messages = data.map(function(message) {
       if (!message.username) {
         message.username = 'NA';
       }

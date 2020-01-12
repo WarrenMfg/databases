@@ -1,5 +1,6 @@
 var express = require('express');
 var db = require('./db');
+let cors = require('cors');
 
 // Middleware
 var morgan = require('morgan');
@@ -14,15 +15,19 @@ module.exports.app = app;
 // Set what we are listening on.
 app.set('port', 3000);
 
+
 // Logging and parsing
 app.use(morgan('dev'));
 app.use(parser.json());
 
+
+app.use(cors());
 // Set up our routes
 app.use('/classes', router);
 
 // Serve the client files
 app.use(express.static(__dirname + '/../client'));
+
 
 // If we are being run directly, run the server.
 if (!module.parent) {

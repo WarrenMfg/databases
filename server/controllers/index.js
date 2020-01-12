@@ -6,8 +6,7 @@ module.exports = {
       models.messages.get((err, msgs) => {
         if (err) {
           console.log('models.messages.get error!!!', err);
-        } else {
-          console.log('RESULLLLLLLLTS', messages);
+        } else {;
           res.json(msgs);
         }
       });
@@ -15,10 +14,11 @@ module.exports = {
 
     post: function (req, res) {
       let params = [req.body.username, req.body.message, req.body.roomname];
+      console.log('req body', req.body);
       models.messages.post(params, (err, results) => {
         if (err) {
           console.log('models.messages.post error !!!', err);
-        } else {
+        } else {;
           res.sendStatus(201);
         }
       });
@@ -32,7 +32,9 @@ module.exports = {
       models.users.get((err, users) => {
         if (err) {
           console.log('models.users.get error!!!');
-        } else { res.json(users); }
+        } else {;
+          res.json(users);
+        }
       });
     },
     post: function (req, res) {
@@ -40,7 +42,9 @@ module.exports = {
       models.users.post(params, (err, results) => {
         if (err) {
           console.log('models.users.post error!!!' + err);
-        } else { res.sendStatus(201); }
+        } else {;
+          res.sendStatus(201);
+        }
       });
     }
   }
