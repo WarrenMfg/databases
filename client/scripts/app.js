@@ -19,7 +19,6 @@ var App = {
 
   fetch: function (callback = () => { }) {
     Parse.readAll((data) => {
-      console.log(data);
       Messages.load(data);
       callback();
     });

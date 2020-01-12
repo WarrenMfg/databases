@@ -13,13 +13,20 @@ module.exports = {
     }, // a function which handles a get request for all messages
 
     post: function (req, res) {
-      let params = [req.body.username, req.body.message, req.body.roomname];
-      console.log('req body', req.body);
-      models.messages.post(params, (err, results) => {
+      let params = [req.body.username, req.body.text, req.body.roomname];
+
+      models.users.post(params[0], (err, results) => {
         if (err) {
-          console.log('models.messages.post error !!!', err);
-        } else {;
-          res.sendStatus(201);
+          console.log('models.users.post, inside of controllers.messages.post', err);
+        } else {
+
+          models.messages.post(params, (err, results) => {
+            if (err) {
+              console.log('models.messages.post error !!!', err);
+            } else {
+              res.sendStatus(201);
+            }
+          });
         }
       });
     } // a function which handles posting a message to the database
