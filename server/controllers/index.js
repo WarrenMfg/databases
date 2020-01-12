@@ -19,14 +19,19 @@ module.exports = {
         if (err) {
           console.log('models.users.post, inside of controllers.messages.post', err);
         } else {
-
-          models.messages.post(params, (err, results) => {
+          models.rooms.post(params[2], (err, results) => {
             if (err) {
-              console.log('models.messages.post error !!!', err);
+              console.log('models.rooms.post, inside of controllers.messages.post', err);
             } else {
-              res.sendStatus(201);
+              models.messages.post(params, (err, results) => {
+                if (err) {
+                  console.log('models.messages.post error !!!', err);
+                } else {
+                  res.sendStatus(201);
+                }
+              });
             }
-          });
+          })
         }
       });
     } // a function which handles posting a message to the database

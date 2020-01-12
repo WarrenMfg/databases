@@ -25,10 +25,19 @@ module.exports = {
       });
     },
     post: function (params, callback) {
+      // duplicate names will exist
       db.query('insert INTO users (username) VALUES (?);', params, function (err, results) {
         callback(err, results);
       }
       );
+    }
+  },
+
+  rooms: {
+    post: function(roomname, callback) {
+      db.query('insert INTO rooms (roomname) VALUES (?)', roomname, function(err, results) {
+        callback(err, results);
+      });
     }
   }
 };
