@@ -11,6 +11,6 @@
   "dependencies": {
     "dompurify": "^2.0.7",
     "jquery": "^3.4.1",
-    "underscore": "^1.9.2"
+    "underscore": "^1.12.1"
   }
 }
